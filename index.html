@@ -16,24 +16,7 @@
     </div>
     <p>Temperature is {rpi_temp}</p>
 
-    <script>
-      let state = "{rpi_led}";
-      let endpoint = "/led/".concat(state === "ON" ? "off" : "on");
-
-      function toggleLED() {
-        let xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && (this.status == 200 || this.status == 0)) {
-            endpoint = "/led/" + state.toLowerCase();
-            state = state === "ON" ? "OFF" : "ON";
-            document.getElementById("led_state").innerHTML = state;
-          }
-        };
-        xhttp.open("POST", endpoint);
-        xhttp.send();
-      }
-    </script>
-
+    <script type="text/javascript" src="/js/rpi_led.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -50,6 +50,9 @@ def serve(connection):
         elif request == '/temp':
             temperature = str(pico_temp_sensor.temp)
             client.send(temperature)
+        elif request == '/js/rpi_led.js':
+            with open('js/rpi_led.js', 'r') as file:
+                client.send(file.read())
         else:
             # Open static html file
             with open('index.html', 'r') as file:
