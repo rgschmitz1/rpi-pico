@@ -42,5 +42,5 @@ const getRpiTemp = () => {
     });
 };
 
-// Get Raspberry Pi Pico temperature every 10 seconds
-setInterval(getRpiTemp, 10000);
+// Get Raspberry Pi Pico temperature every minute
+setInterval(getRpiTemp, 60000);
