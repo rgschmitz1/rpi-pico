@@ -1,1 +1,5 @@
 secrets.py
+.picowgo
+.vscode/extensions.json
+.vscode/Pico-W-Stub
+.vscode/settings.json

@@ -38,6 +38,8 @@ def serve(connection):
         client = connection.accept()[0]
         request = client.recv(1024).decode('utf8')
 
+        method=None
+        route=None
         try:
             method = request.split()[0]
             route = request.split()[1]
