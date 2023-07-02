@@ -1,25 +1,10 @@
-import network
+from connection import connect
 from socket import socket
 from json import loads
-from time import sleep
 # picozero has helper methods included below, but it is overkill for this project
 #from picozero import pico_temp_sensor, pico_led
 from rpi_pico_w import pico_led, pico_temp_sensor
 from machine import reset
-
-from secrets import SSID, PASSWORD
-
-def connect():
-    # Connect to WLAN
-    wlan = network.WLAN(network.STA_IF)
-    wlan.active(True)
-    wlan.connect(SSID, PASSWORD)
-    while not wlan.isconnected():
-        print('Waiting for connection...')
-        sleep(1)
-    ip = wlan.ifconfig()[0]
-    print(f'Connected on {ip}')
-    return ip
 
 def open_socket(ip):
     # Open a socket
